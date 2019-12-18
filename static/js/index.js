@@ -15,9 +15,9 @@ function create_like(success_cb, error_cb) {
 
     $.ajax({
         type: "POST",
-        url: '/insta/like',
+        url: '/like',
         data: {
-            post_pk : post_pk
+            post_pk: post_pk
         },
         success: function(data) { success_cb(data); },
         error: function(error) { error_cb(error); }
@@ -160,10 +160,10 @@ function update_unfollow_view(data) {
 }
 
 
-// $('.follow-toggle__container').on('click', '.follow-user', function() {
-//     follow_user.call(this, update_follow_view, error_cb, 'follow');
-// });
+$('.follow-toggle__container').on('click', '.follow-user', function() {
+    follow_user.call(this, update_follow_view, error_cb, 'follow');
+});
 
-// $('.follow-toggle__container').on('click', '.unfollow-user', function() {
-//     follow_user.call(this, update_unfollow_view, error_cb, 'unfollow');
-// });
+$('.follow-toggle__container').on('click', '.unfollow-user', function() {
+    follow_user.call(this, update_unfollow_view, error_cb, 'unfollow');
+});
