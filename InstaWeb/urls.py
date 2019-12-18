@@ -1,4 +1,4 @@
-"""InstaWeb URL Configuration
+"""InstaJZ URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+
 from Insta.views import SignUp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('insta/', include('Insta.urls')),
+    path('', include('Insta.urls')),
     path('auth/', include('django.contrib.auth.urls')),
-    path('auth/signup', SignUp.as_view(), name='signup'),
+    path('auth/signup/', SignUp.as_view(), name='signup'),
 ]

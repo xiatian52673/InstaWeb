@@ -1,4 +1,4 @@
-"""InstaWeb URL Configuration
+"""InstaJZ URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -16,13 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from Insta.views import HelloWorld, PostView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from Insta.views import (HelloWorld, PostCreateView, PostDeleteView,
+                         PostDetailView, PostsView, PostUpdateView,
+                         UserDetailView, addLike)
 
 urlpatterns = [
-    path('', HelloWorld.as_view(), name='helloworld'),
-    path('posts/', PostView.as_view(), name = 'posts'),
-    path('post/<int:pk>/', PostDetailView.as_view(), name = 'post_detail'),
-    path('post/new', PostCreateView.as_view(), name = 'make_post'),
-    path('post/update/<int:pk>/', PostUpdateView.as_view(), name = 'post_update'),
-    path('post/delete/<int:pk>/', PostDeleteView.as_view(), name = 'post_delete'),
+    path('helloworld/', HelloWorld.as_view(), name='helloworld'),
+    path('', PostsView.as_view(), name='posts'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
+    path('post/new/', PostCreateView.as_view(), name='make_post'),
+    path('post/update/<int:pk>/', PostUpdateView.as_view(), name='post_update'),
+    path('post/delete/<int:pk>/', PostDeleteView.as_view(), name='post_delete'),
+    path('like', addLike, name='addLike'),
+    path('user/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
 ]
