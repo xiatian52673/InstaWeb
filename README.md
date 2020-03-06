@@ -1,5 +1,5 @@
 # Full Stack Django Application: Instagram
-a Django-based full stack web application including functionalities: authentication, authorization, follow/unfollow user, making posts, master/detail view of posts, comment/like, etc.
+A Django-based full stack web application including functionalities: authentication, authorization, follow/unfollow user, making posts, master/detail view of posts, comment/like, etc.
 
 ## Tech Stack
 Django, Python, HTML/CSS, BootStrap, Ajax, JavaScript
